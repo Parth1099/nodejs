@@ -16,16 +16,7 @@ app.get("/", (req, resp) => {
 
 app.post("/", (req, resp) => {
   const data = req.body;
-  //   const data = {
-  //     name: "parth",
-  //     email: "parth@gmail.com",
-  //     phone: 98982344555,
-  //     address: "gujarat",
-  //     photo: "test",
-  //     skills: "driving",
-  //     hobbies: "driving",
-  //     short_desc: "test",
-  //   };
+
   con.query("INSERT INTO crud SET ? ", data, (error, result, field) => {
     if (error) throw error;
     resp.send("Data Insert Successfully");
